@@ -25,6 +25,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         return view('home');
@@ -35,9 +36,11 @@ class HomeController extends Controller
         return view('s_entry');
     }
 
-    public function s_submit()
+    public function s_submit(Request $request)
     {
-        $name = request('name');
-        echo $name;
+        if(request()->hasFile('m_photo')) {
+            $path = $request->file('m_photo')->store('public/smartphones');
+            echo $path;
+        }
     }
 }

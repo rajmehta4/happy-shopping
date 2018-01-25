@@ -22,7 +22,8 @@
                 <div class="panel-heading">New smartphone entry</div>
 
                 <div class="panel-body">
-                	<form method="POST">
+
+                	<form method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                 		<div class="form-group">
@@ -107,7 +108,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="brand" class="col-md-4 control-label">Main photo</label>
+                            <label for="m_photo" class="col-md-4 control-label">Main photo</label>
 
                             <div class="col-md-6">
                                 <input id="m_photo" type="file" class="form-control-file space" name="m_photo" required>
@@ -132,6 +133,7 @@
                         </div>
 
                 	</form>
+
                 </div>
 		    </div>
 	   </div>
