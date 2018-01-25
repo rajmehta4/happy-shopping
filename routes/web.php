@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('smartphones/entry', 'HomeController@s_entry')->name('s_entry');
+
+Route::post('smartphones/entry', 'HomeController@s_submit')->name('s_submit');
