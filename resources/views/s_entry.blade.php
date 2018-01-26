@@ -70,7 +70,7 @@
 
                             <div class="col-md-6">
 
-                                <select id="ram" name="ram" class="form-control space">
+                                <select id="in_storage" name="in_storage" class="form-control space">
                                     <option>1 GB</option>
                                     <option>2 GB</option>
                                     <option>4 GB</option>
@@ -115,13 +115,13 @@
                             </div>
                         </div>
 
-                        <!--<div class="form-group">
+                        <div class="form-group">
                             <label for="brand" class="col-md-4 control-label">More photos</label>
 
                             <div class="col-md-6">
-                                <input id="m_photos" type="file" class="form-control-file space" name="m_photos" multiple required>
+                                <input id="m_photos" type="file" class="form-control-file space" name="m_photos[]" multiple required>
                             </div>
-                        </div>-->
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
