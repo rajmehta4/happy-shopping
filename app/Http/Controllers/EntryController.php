@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class EntryController extends Controller
 {
@@ -22,6 +24,8 @@ class EntryController extends Controller
         $path = $request->file('m_photo')->store('public/smartphones');
         $path = str_after($path, 'smartphones/');
 
+        $slug = str_slug($request->input('name'));
+
         // database entry
 
         DB::table('smartphones')->insert(
@@ -33,7 +37,8 @@ class EntryController extends Controller
                 'f_camera' => (int)$request->input('f_camera'),
                 'r_camera' => (int)$request->input('r_camera'),
                 'processor' => $request->input('processor'),
-                'm_photo_path' => $path
+                'm_photo_path' => $path,
+                'slug' => $slug
             ]
         );
 
@@ -42,7 +47,9 @@ class EntryController extends Controller
         $id = DB::table('smartphones')->select('id')->where('name', $request->input('name'))->first();
 
         foreach($request->file('m_photos') as $photo) {
+            
             $path = $photo->store('public/smartphones');
+            $path = str_after($path, 'smartphones/');
 
             DB::table('s_more_images')->insert(
                 [
