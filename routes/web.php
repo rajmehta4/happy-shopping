@@ -23,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('smartphones/entry', 'HomeController@s_entry')->name('s_entry');
+Route::get('smartphones/entry', 'EntryController@s_entry')->name('s_entry');
 
-Route::post('smartphones/entry', 'HomeController@s_submit')->name('s_submit');
+Route::post('smartphones/entry', 'EntryController@s_submit')->name('s_submit');
+
+Route::get('smartphones/entry_success', 'EntryController@s_entry_success')->name('s_entry_success');
