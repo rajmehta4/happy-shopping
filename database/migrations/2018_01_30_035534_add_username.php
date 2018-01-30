@@ -13,8 +13,8 @@ class AddUsername extends Migration
      */
     public function up()
     {
-        Schema::table('smartphones', function (Blueprint $table) {
-            $table->string('username')->change();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('username');
         });
     }
 
