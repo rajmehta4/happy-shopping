@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('smartphones/entry', 'EntryController@s_entry')->name('s_entry')->middleware('entry');
 
@@ -26,3 +26,7 @@ Route::post('smartphones/entry', 'EntryController@s_submit')->name('s_submit');
 Route::get('smartphones/entry_success', 'EntryController@s_entry_success')->name('s_entry_success');
 
 Route::get('smartphones/{slug}', 'ProductsController@smartphones')->name('smartphones');
+
+Route::get('cart/add/{id}', 'CartController@add_product')->name('add_product');
+
+Route::get('cart', 'CartController@display_cart')->name('display_cart');
