@@ -35,6 +35,14 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="price" class="col-md-4 control-label">Price</label>
+
+                            <div class="col-md-6">
+                                <input id="price" type="number" class="form-control space" name="price" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label for="brand" class="col-md-4 control-label">Brand</label>
 
                             <div class="col-md-6">
@@ -57,6 +65,7 @@
                                 <select id="ram" name="ram" class="form-control space">
                                     <option>1 GB</option>
                                     <option>2 GB</option>
+                                    <option>3 GB</option>
                                     <option>4 GB</option>
                                     <option>8 GB</option>
                                     <option>16 GB</option>

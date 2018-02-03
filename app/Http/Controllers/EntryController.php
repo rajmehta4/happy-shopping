@@ -8,8 +8,18 @@ use Illuminate\Support\Facades\Input;
 
 class EntryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function s_entry() {
         return view('s_entry');
+    }
+
+    public function s_entry_success() {
+        return view('s_entry_success');
     }
 
     public function s_submit(Request $request) {
@@ -31,6 +41,7 @@ class EntryController extends Controller
         DB::table('smartphones')->insert(
             [
                 'name' => $request->input('name'),
+                'price' => $request->input('price'),
                 'brand' => $brand->id,
                 'ram' => (int)$ram,
                 'in_storage' => (int)$in_storage,
@@ -42,9 +53,15 @@ class EntryController extends Controller
             ]
         );
 
-        // more images
+        $phone = DB::table('smartphones')->select('id')->where('slug', $slug)->first();
 
-        $id = DB::table('smartphones')->select('id')->where('name', $request->input('name'))->first();
+        // all_products entry
+
+        DB::table('all_products')->insert(
+                    ['type' => 1, 'type_id' => $phone->id]
+                );
+
+        // more images
 
         foreach($request->file('m_photos') as $photo) {
             
@@ -54,15 +71,11 @@ class EntryController extends Controller
             DB::table('s_more_images')->insert(
                 [
                     'path' => $path,
-                    'smartphone_id' => $id->id
+                    'smartphone_id' => $phone->id
                 ]
             );
         }
 
         return redirect('smartphones/entry_success');
-    }
-
-    public function s_entry_success(Request $request) {
-        return view('s_entry_success');
     }
 }
