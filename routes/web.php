@@ -30,3 +30,5 @@ Route::get('smartphones/{slug}', 'ProductsController@smartphones')->name('smartp
 Route::get('cart/add/{id}', 'CartController@add_product')->name('add_product');
 
 Route::get('cart', 'CartController@display_cart')->name('display_cart');
+
+Route::get('cart/remove/{id}', 'CartController@remove_product')->name('remove_product');

@@ -29,4 +29,6 @@
 
 @endforeach
 
+<a href="/cart/add/{{ $all_products_id }}">Add to cart</a>
+
 @endsection

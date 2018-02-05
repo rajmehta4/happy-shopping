@@ -38,8 +38,11 @@ class ProductsController extends Controller
 
     		    if($check == null) {
 
-    		    DB::table('browsing_hist')->insert(
-    		        ['user_id' => $id, 'p_id' => $product->id]
+    		    	DB::table('browsing_hist')->insert(
+    		        	[
+    		        		'user_id' => $id,
+    		        		'p_id' => $product->id
+    		        	]
     		    );
 
     			}
@@ -47,10 +50,11 @@ class ProductsController extends Controller
 
     		$phone_images = DB::table('s_more_images')->select('path')->where('smartphone_id', $phone->id)->get();
 
-			    		
+	
     		return view('smartphone', [
     			'phone' => $phone,
-    			'phone_images' => $phone_images
+    			'phone_images' => $phone_images,
+    			'all_products_id' => $product->id
     		]);
 
     	}
