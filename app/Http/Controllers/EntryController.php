@@ -18,10 +18,6 @@ class EntryController extends Controller
         return view('s_entry');
     }
 
-    public function s_entry_success() {
-        return view('s_entry_success');
-    }
-
     public function s_submit(Request $request) {
 
         // preparation

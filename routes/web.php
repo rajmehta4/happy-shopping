@@ -19,13 +19,34 @@ Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('smartphones/entry', 'EntryController@s_entry')->name('s_entry')->middleware('entry');
+// smartphone entry
+
+Route::get('smartphones/entry', 'EntryController@s_entry')->name('s_entry')->middleware('only_admin_entry');
 
 Route::post('smartphones/entry', 'EntryController@s_submit')->name('s_submit');
 
-Route::get('smartphones/entry_success', 'EntryController@s_entry_success')->name('s_entry_success');
+Route::get('smartphones/entry_success', function () {
+
+	return view('entry_success');
+
+});
+// laptops entry
+
+Route::get('laptops/entry', 'L_EntryController@entry')->name('l_entry')->middleware('only_admin_entry');
+
+Route::post('laptops/entry', 'L_EntryController@submit')->name('l_submit');
+
+Route::get('laptops/entry_success', function () {
+
+	return view('entry_success');
+
+});
+
+// products
 
 Route::get('smartphones/{slug}', 'ProductsController@smartphones')->name('smartphones');
+
+// cart
 
 Route::get('cart/add/{id}', 'CartController@add_product')->name('add_product');
 

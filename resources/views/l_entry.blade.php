@@ -51,6 +51,7 @@
                                     <option>Mi</option>
                                     <option>OnePlus</option>
                                     <option>Motorola</option>
+                                    <option>Samsung</option>
                                 </select>
                             </div>
                         </div>
@@ -88,22 +89,6 @@
                                     <option>128 GB</option>
                                 </select>
 
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-	                		<label for="f_camera" class="col-md-4 control-label">Front camera (in MP)</label>
-
-                            <div class="col-md-6">
-                                <input id="f_camera" type="number" class="form-control space" name="f_camera" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="r_camera" class="col-md-4 control-label">Rear camera (in MP)</label>
-
-                            <div class="col-md-6">
-                                <input id="r_camera" type="number" class="form-control space" name="r_camera" required>
                             </div>
                         </div>
 

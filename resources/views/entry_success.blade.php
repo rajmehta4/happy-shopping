@@ -17,8 +17,7 @@
 
 <div class="spacing">
 
-	<p>Smartphone entry done successfully!</p>
-	<p>In mood for <a href="entry">one more entry?</a></p>
+	<p>Product entry done successfully!</p>
 
 </div>
 

@@ -19,11 +19,11 @@ class EntryAuth
         $user = Auth::user();
         $id = Auth::id();
 
-        if($id != 7) // if the user is not raj
+        if($id == 7 || $id == 8) // if the user is raj or dhruv
         {
-            return redirect('home');
+            return $next($request);
         }
 
-        return $next($request);
+        return redirect('home');
     }
 }
