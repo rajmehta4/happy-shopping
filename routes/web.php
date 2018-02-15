@@ -11,36 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@welcome');
 
 Auth::routes();
 
-Route::get('home', 'HomeController@index')->name('home');
+Route::get('home', 'PagesController@home')->name('home');
 
 // smartphone entry
 
-Route::get('smartphones/entry', 'EntryController@s_entry')->name('s_entry')->middleware('only_admin_entry');
+Route::get('smartphones/entry', 'PagesController@s_entry')->name('s_entry')->middleware('only_admin_entry');
 
 Route::post('smartphones/entry', 'EntryController@s_submit')->name('s_submit');
 
-Route::get('smartphones/entry_success', function () {
+Route::get('smartphones/entry_success', 'PagesController@entry_success');
 
-	return view('entry_success');
-
-});
 // laptops entry
 
-Route::get('laptops/entry', 'L_EntryController@entry')->name('l_entry')->middleware('only_admin_entry');
+Route::get('laptops/entry', 'PagesController@entry')->name('l_entry')->middleware('only_admin_entry');
 
 Route::post('laptops/entry', 'L_EntryController@submit')->name('l_submit');
 
-Route::get('laptops/entry_success', function () {
+Route::get('laptops/entry_success', 'PagesController@entry_success');
 
-	return view('entry_success');
-
-});
 
 // products
 
