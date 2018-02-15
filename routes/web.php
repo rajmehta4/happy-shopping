@@ -27,9 +27,9 @@ Route::get('smartphones/entry_success', 'PagesController@entry_success');
 
 // laptops entry
 
-Route::get('laptops/entry', 'PagesController@entry')->name('l_entry')->middleware('only_admin_entry');
+Route::get('laptops/entry', 'PagesController@l_entry')->name('l_entry')->middleware('only_admin_entry');
 
-Route::post('laptops/entry', 'L_EntryController@submit')->name('l_submit');
+Route::post('laptops/entry', 'L_EntryController@l_submit')->name('l_submit');
 
 Route::get('laptops/entry_success', 'PagesController@entry_success');
 

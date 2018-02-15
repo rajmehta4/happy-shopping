@@ -3,7 +3,7 @@
 @section('custom_css')
 
 <style>
-    
+
     .space {
         margin-bottom: 15px;
     }
@@ -19,7 +19,7 @@
         <div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 
-                <div class="panel-heading">New smartphone entry</div>
+                <div class="panel-heading">New laptop entry</div>
 
                 <div class="panel-body">
 
@@ -47,25 +47,20 @@
 
                             <div class="col-md-6">
                                 <select id="brand" name="brand" class="form-control space">
-                                    <option>Apple</option>
-                                    <option>Mi</option>
-                                    <option>OnePlus</option>
-                                    <option>Motorola</option>
-                                    <option>Samsung</option>
+                                    <option>Dell</option>
+                                    <option>HP</option>
+                                    <option>Asus</option>
                                 </select>
                             </div>
                         </div>
 
 
                         <div class="form-group">
-	                		<label for="ram" class="col-md-4 control-label">RAM</label>
+	                		      <label for="ram" class="col-md-4 control-label">RAM</label>
 
                             <div class="col-md-6">
 
                                 <select id="ram" name="ram" class="form-control space">
-                                    <option>1 GB</option>
-                                    <option>2 GB</option>
-                                    <option>3 GB</option>
                                     <option>4 GB</option>
                                     <option>8 GB</option>
                                     <option>16 GB</option>
@@ -75,18 +70,13 @@
                         </div>
 
                         <div class="form-group">
-	                		<label for="in_storage" class="col-md-4 control-label">Internal storage</label>
+	                		<label for="hdd_capacity" class="col-md-4 control-label">HDD Capacity</label>
 
                             <div class="col-md-6">
 
-                                <select id="in_storage" name="in_storage" class="form-control space">
-                                    <option>1 GB</option>
-                                    <option>2 GB</option>
-                                    <option>4 GB</option>
-                                    <option>8 GB</option>
-                                    <option>16 GB</option>
-                                    <option>64 GB</option>
-                                    <option>128 GB</option>
+                                <select id="hdd_capacity" name="hdd_capacity" class="form-control space">
+                                    <option>500 GB</option>
+                                    <option>1 TB</option>
                                 </select>
 
                             </div>
@@ -97,6 +87,22 @@
 
                             <div class="col-md-6">
                                 <input id="processor" type="text" class="form-control space" name="processor" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="graphics_card" class="col-md-4 control-label">Graphics Card</label>
+
+                            <div class="col-md-6">
+                                <input id="graphics_card" type="text" class="form-control space" name="graphics_card" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="os" class="col-md-4 control-label">Operating System</label>
+
+                            <div class="col-md-6">
+                                <input id="os" type="text" class="form-control space" name="os" required>
                             </div>
                         </div>
 
