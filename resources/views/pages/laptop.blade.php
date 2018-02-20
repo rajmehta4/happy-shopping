@@ -18,7 +18,7 @@
 
 <div class="spacing">
 
-	<h1>{{ $phone->name }}</h1>
+	<h1>{{ $laptop->name }}</h1>
 	<img src="/storage/laptops/{{ $laptop->m_photo_path }}" />
 
 </div>

@@ -21,9 +21,11 @@ Route::get('home', 'PagesController@home')->name('home');
 
 Route::get('smartphones/entry', 'PagesController@s_entry')->name('s_entry')->middleware('only_admin_entry');
 
-Route::post('smartphones/entry', 'EntryController@s_submit')->name('s_submit');
+Route::post('smartphones/entry', 'S_EntryController@s_submit')->name('s_submit');
 
 Route::get('smartphones/entry_success', 'PagesController@entry_success');
+
+Route::get('smartphones/images', 'PagesController@smartphones');
 
 // laptops entry
 
@@ -33,10 +35,19 @@ Route::post('laptops/entry', 'L_EntryController@l_submit')->name('l_submit');
 
 Route::get('laptops/entry_success', 'PagesController@entry_success');
 
+// earphones entry
+
+Route::get('earphones/entry', 'PagesController@e_entry')->name('e_entry')->middleware('only_admin_entry');
+
+Route::post('earphones/entry', 'E_EntryController@e_submit')->name('e_submit');
+
+Route::get('earphones/entry_success', 'PagesController@entry_success');
 
 // products
 
 Route::get('smartphones/{slug}', 'ProductsController@smartphones')->name('smartphones');
+Route::get('laptops/{slug}', 'ProductsController@laptops')->name('laptops');
+Route::get('earphones/{slug}', 'ProductsController@earphones')->name('earphones');
 
 // cart
 

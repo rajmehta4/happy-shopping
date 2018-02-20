@@ -13,15 +13,11 @@ class EntryController extends Controller
     {
         $this->middleware('auth');
     }
-    
-    public function s_entry() {
-        return view('s_entry');
-    }
 
     public function s_submit(Request $request) {
 
         // preparation
-        
+
         $brand = DB::table('brands')->select('id')->where('name', $request->input('brand'))->first();
 
         $ram = str_before($request->input('ram'), ' ');
@@ -60,7 +56,7 @@ class EntryController extends Controller
         // more images
 
         foreach($request->file('m_photos') as $photo) {
-            
+
             $path = $photo->store('public/smartphones');
             $path = str_after($path, 'smartphones/');
 

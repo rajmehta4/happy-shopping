@@ -22,12 +22,21 @@ class PagesController extends Controller
   public function l_entry() {
       return view('pages.l_entry');
   }
+
   public function s_entry() {
       return view('pages.s_entry');
   }
 
-  public function smartphone() {
+  public function e_entry() {
+      return view('pages.e_entry');
+  }
+
+  public function smartphones() {
       return view('pages.smartphone');
+  }
+
+  public function earphone() {
+      return view('pages.earphone');
   }
 
   public function welcome() {
