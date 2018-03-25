@@ -41,8 +41,8 @@ class L_EntryController extends Controller
                 'brand' => $brand->id,
                 'ram' => (int)$ram,
                 'hdd_capacity' => (int)$hdd_capacity,
-                'processor' => (int)$request->input('processor'),
-                'graphics_card' => (int)$request->input('graphics_card'),
+                'processor' => $request->input('processor'),
+                'graphics_card' => $request->input('graphics_card'),
                 'os' => $request->input('os'),
                 'm_photo_path' => $path,
                 'slug' => $slug

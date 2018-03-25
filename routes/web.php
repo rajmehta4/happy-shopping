@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'PagesController@welcome');
+Route::get('/', 'HomeController@homepage');
 
 Auth::routes();
 
-Route::get('home', 'PagesController@home')->name('home');
+Route::get('home', 'HomeController@homepage')->name('home');
 
 // smartphone entry
 
@@ -46,7 +46,9 @@ Route::get('earphones/entry_success', 'PagesController@entry_success');
 // products
 
 Route::get('smartphones/{slug}', 'ProductsController@smartphones')->name('smartphones');
+
 Route::get('laptops/{slug}', 'ProductsController@laptops')->name('laptops');
+
 Route::get('earphones/{slug}', 'ProductsController@earphones')->name('earphones');
 
 // cart

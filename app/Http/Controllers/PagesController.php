@@ -15,8 +15,8 @@ class PagesController extends Controller
       return view('pages.entry_success');
   }
 
-  public function home() {
-      return view('pages.home');
+  public function homepage() {
+      return view('pages.homepage');
   }
 
   public function l_entry() {

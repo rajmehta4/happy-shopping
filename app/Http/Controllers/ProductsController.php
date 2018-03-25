@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
+
     public function smartphones($slug) {
 
     	$phone = DB::table('smartphones')->select()->where('slug', $slug)->first();
@@ -50,11 +51,13 @@ class ProductsController extends Controller
 
     		$phone_images = DB::table('s_more_images')->select('path')->where('smartphone_id', $phone->id)->get();
 
+        $phone_brand = DB::table('brands')->select('name')->where('id', $phone->brand)->first();
 
-    		return view('smartphone', [
+    		return view('pages.smartphone', [
     			'phone' => $phone,
     			'phone_images' => $phone_images,
-    			'all_products_id' => $product->id
+    			'all_products_id' => $product->id,
+          'brand' => $phone_brand
     		]);
 
     	}
@@ -80,7 +83,7 @@ class ProductsController extends Controller
     		    $product = DB::table('all_products')
     		    			->select()
     		    			->where('type', 1)
-    		    			->where('type_id', $laptop->id)
+    		    			->where('type_id', $laps->id)
     		    			->first();
 
     		    $check = DB::table('browsing_hist')
@@ -103,11 +106,13 @@ class ProductsController extends Controller
 
     		$laps_images = DB::table('l_more_images')->select('path')->where('laptop_id', $laps->id)->get();
 
+        $laps_brand = DB::table('brands')->select('name')->where('id', $laps->brand)->first();
 
-    		return view('laptop', [
-    			'laptop' => $laps,
+    		return view('pages.laptop', [
+    			'laps' => $laps,
     			'laps_images' => $laps_images,
-    			'all_products_id' => $product->id
+    			'all_products_id' => $product->id,
+          'brand' => $laps_brand
     		]);
 
     	}
@@ -155,11 +160,14 @@ public function earphones($slug) {
 
     $ephone_images = DB::table('e_more_images')->select('path')->where('earphone_id', $ephone->id)->get();
 
+    $ephone_brand = DB::table('brands')->select('name')->where('id', $ephone->brand)->first();
 
-    return view('earphone', [
+
+    return view('pages.earphone', [
       'ephone' => $ephone,
       'ephone_images' => $ephone_images,
-      'all_products_id' => $product->id
+      'all_products_id' => $product->id,
+      'brand' => $ephone_brand
     ]);
 
   }

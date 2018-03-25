@@ -1,34 +1,76 @@
-@extends('layouts.app')
+@extends('layouts.happyshopping')
 
-@section('custom_css')
-
-<style>
-	
-	.spacing {
-		margin-left: 10%;
-		margin-top: 5%;
-	}
-
-</style>
-
-@endsection
-
-@section('content')
+@section('productview')
 
 
-<div class="spacing">
+  <div class="products">
+    <div class="container">
+      <div class="agileinfo_single">
 
-	<h1>{{ $phone->name }}</h1>
-	<img src="/storage/smartphones/{{ $phone->m_photo_path }}" />
+        <div class="col-md-4 agileinfo_single_left">
+          <img id="example" src="/storage/smartphones/{{ $phone->m_photo_path }}" alt=" " class="img-responsive">
+        </div>
+        <div class="col-md-8 agileinfo_single_right">
+        <h2>{{ $phone->name }}</h2>
 
-</div>
+          <div class="w3agile_description">
 
-@foreach($phone_images as $image)
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Specs</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Brand</td>
+                    <td>{{ $brand->name }}</td>
+                  </tr>
+                  <tr>
+                    <td>Storage</td>
+                    <td>{{ $phone->in_storage }} GB</td>
+                  </tr>
+                  <tr>
+                    <td>Primary Camera</td>
+                    <td>{{ $phone->r_camera }} MP</td>
+                  </tr>
+                  <tr>
+                    <td>Secondary Camera</td>
+                    <td>{{ $phone->f_camera }} MP</td>
+                  </tr>
+                  <tr>
+                    <td>Ram</td>
+                    <td>{{ $phone->ram }} GB</td>
+                  </tr>
+                  <tr>
+                    <td>Processor</td>
+                    <td>{{ $phone->processor }}</td>
+                  </tr>
 
-	<img src="/storage/smartphones/{{ $image->path }}" />
 
-@endforeach
+                </tbody>
+              </table>
 
-<a href="/cart/add/{{ $all_products_id }}">Add to cart</a>
+          </div>
+
+          <div class="snipcart-item block">
+            <div class="snipcart-thumb agileinfo_single_right_snipcart">
+              <h4 class="m-sing">&#8377;{{ $phone->price }}</h4>
+            </div>
+
+            <div class="snipcart-details agileinfo_single_right_details">
+              <form action="#" method="post">
+                  <input type="submit" name="submit" value="Add to cart" class="button">
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 
 @endsection
