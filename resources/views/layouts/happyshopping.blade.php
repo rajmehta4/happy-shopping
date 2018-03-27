@@ -30,7 +30,6 @@
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
 
-
 </head>
 <body>
 <!-- header -->
@@ -48,11 +47,7 @@
 				</ul>
 			</div>
 			<div class="product_list_header">
-					<form action="cart" method="post" class="last">
-						<input type="hidden" name="cmd" value="_cart">
-						<input type="hidden" name="display" value="1">
-						<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-					</form>
+						<a href="{{ route('display_cart') }}"><button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
@@ -120,16 +115,6 @@
 <!-- //navigation -->
 
 
-<!-- breadcrumbs -->
-	<div class="breadcrumbs">
-		<div class="container">
-			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-				<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-				<li class="active">Singlepage</li>
-			</ol>
-		</div>
-	</div>
-<!-- //breadcrumbs -->
 
 @yield('homeview')
 
