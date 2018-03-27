@@ -34,7 +34,7 @@ class CartController extends Controller
     			]
     		);
 
-    		return response('Item added to cart successfully!');
+    		return view('pages/cart_add');
 
     	}
     }
@@ -46,7 +46,7 @@ class CartController extends Controller
 
     	$cart = DB::table('cart')->select('p_id')->where('user_id', $id)->get();
 
-    	return view('cart', [
+    	return view('pages/cart', [
     		'cart' => $cart
     	]);
 
@@ -74,7 +74,7 @@ class CartController extends Controller
     			->where('p_id', $id)
     			->delete();
 
-    		return response('Item removed from cart successfully!');
+    		return view('pages/cart_remove');
     	}
 	}
 }

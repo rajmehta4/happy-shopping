@@ -6,8 +6,6 @@
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Super Market Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
 <!-- //css -->
 <link href="{{ asset('css/product.css') }}" rel="stylesheet">
@@ -43,14 +41,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="agile-login">
 				<ul>
-					<li><a href="registered.html"> Create Account </a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="contact.html">Help</a></li>
+					<li><a href="register">Create Account</a></li>
+					<li><a href="login">Login</a></li>
+					
 
 				</ul>
 			</div>
 			<div class="product_list_header">
-					<form action="#" method="post" class="last">
+					<form action="cart" method="post" class="last">
 						<input type="hidden" name="cmd" value="_cart">
 						<input type="hidden" name="display" value="1">
 						<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
@@ -66,14 +64,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 		<div class="w3ls_logo_products_left1">
 				<ul class="phone_email">
-					<li><i class="fa fa-phone" aria-hidden="true"></i>Order online or call us : (+91952) 782 2702</li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>Order online or call us : (+91) 8080 778899</li>
 
 				</ul>
 			</div>
 			<div class="w3ls_logo_products_left">
 				<h1><a href="{{ url('/') }}">Happy Shopping</a></h1>
 			</div>
-		<div class="w3l_search">
+		<!--<div class="w3l_search">
 			<form action="#" method="post">
 				<input type="search" name="Search" placeholder="Search for a Product..." required="">
 				<button type="submit" class="btn btn-default search" aria-label="Left Align">
@@ -81,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</button>
 				<div class="clearfix"></div>
 			</form>
-		</div>
+		</div>-->
 
 			<div class="clearfix"> </div>
 		</div>
@@ -155,7 +153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="footer-copy">
 
 					<div >
-						<p>© 2018 Happy Shopping. All rights reserved | Design by <a href="https://t.me/gnosis_daemon">Dhruv Bindoria</a></p>
+						<p>© 2018 Happy Shopping | All rights reserved</p>
 					</div>
 				</div>
 

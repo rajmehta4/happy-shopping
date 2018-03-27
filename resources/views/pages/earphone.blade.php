@@ -54,9 +54,10 @@
             </div>
 
             <div class="snipcart-details agileinfo_single_right_details">
-              <form action="#" method="post">
+              <!--<form action="#" method="post">
                   <input type="submit" name="submit" value="Add to cart" class="button">
-              </form>
+              </form>-->
+              <a class="cart-button" href="../cart/add/{{ $all_products_id }}">Add to cart</a>
             </div>
           </div>
 

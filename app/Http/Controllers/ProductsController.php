@@ -21,15 +21,15 @@ class ProductsController extends Controller
 
     	else {
 
+        $product = DB::table('all_products')
+                  ->select()
+                  ->where('type', 1)
+                  ->where('type_id', $phone->id)
+                  ->first();
+
     		if (Auth::check()) {
     		    $user = Auth::user();
     		    $id = Auth::id();
-
-    		    $product = DB::table('all_products')
-    		    			->select()
-    		    			->where('type', 1)
-    		    			->where('type_id', $phone->id)
-    		    			->first();
 
     		    $check = DB::table('browsing_hist')
     		    			->select()
@@ -76,15 +76,15 @@ class ProductsController extends Controller
 
     	else {
 
+        $product = DB::table('all_products')
+                  ->select()
+                  ->where('type', 2)
+                  ->where('type_id', $laps->id)
+                  ->first();
+
     		if (Auth::check()) {
     		    $user = Auth::user();
     		    $id = Auth::id();
-
-    		    $product = DB::table('all_products')
-    		    			->select()
-    		    			->where('type', 1)
-    		    			->where('type_id', $laps->id)
-    		    			->first();
 
     		    $check = DB::table('browsing_hist')
     		    			->select()
@@ -130,16 +130,17 @@ public function earphones($slug) {
 
   else {
 
+    $product = DB::table('all_products')
+              ->select()
+              ->where('type', 4)
+              ->where('type_id', $ephone->id)
+              ->first();
+
     if (Auth::check()) {
         $user = Auth::user();
         $id = Auth::id();
 
-        $product = DB::table('all_products')
-              ->select()
-              ->where('type', 1)
-              ->where('type_id', $ephone->id)
-              ->first();
-
+        
         $check = DB::table('browsing_hist')
               ->select()
               ->where('user_id', $id)

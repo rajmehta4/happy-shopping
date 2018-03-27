@@ -45,7 +45,7 @@
                                 <h4>{{ $phone1->price }}</h4>
                               </div>
                               <div class="snipcart-details top_brand_home_details">
-                                <form action="#" method="post">
+                                <form action="cart/add/1" method="post">
                                     <input type="submit" name="submit" value="Add to cart" class="button" />
                                 </form>
                               </div>
