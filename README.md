@@ -5,7 +5,7 @@ Happy Shopping is a basic e-commerce website built using the Laravel PHP framewo
 
 It is part of our final year engineering project along with a Hadoop program to generate recommendations for e-commerce users.
 
-Everything from the database design to writing the controllers and views has been done by yours truly. The site wouldn't be ready in time without the help of @DaemonDhruv who helped me with the front-end.
+Everything from the database design to writing the controllers and views has been done by yours truly. The site wouldn't be ready in time without the help of [@DaemonDhruv](https://github.com/DaemonDhruv) who helped me with the front-end.
 
 I also wanted to make an Android app which receives data via a REST API to complement the website, but we never had such time to begin with :(
 
