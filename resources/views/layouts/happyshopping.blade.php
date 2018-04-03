@@ -42,7 +42,7 @@
 				<ul>
 					<li><a href="register">Create Account</a></li>
 					<li><a href="login">Login</a></li>
-					
+
 
 				</ul>
 			</div>
@@ -119,6 +119,8 @@
 @yield('homeview')
 
 @yield('productview')
+
+@yield('cart')
 
 @include('layouts.offers')
 

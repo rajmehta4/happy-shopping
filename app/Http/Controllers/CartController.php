@@ -25,7 +25,7 @@ class CartController extends Controller
     		->where('p_id', $id)
     		->first();
 
-    	if($check == null) {	
+    	if($check == null) {
 
     		DB::table('cart')->insert(
     			[
@@ -44,10 +44,34 @@ class CartController extends Controller
     	$user = Auth::user();
     	$id = Auth::id();
 
-    	$cart = DB::table('cart')->select('p_id')->where('user_id', $id)->get();
+    	$cart = DB::table('cart')->where('user_id', $id)->get();
+
+      $mob = DB::table('all_products')
+            ->join('smartphones', 'all_products.type_id', '=', 'smartphones.id')
+            ->join('cart', 'all_products.id', '=', 'cart.p_id')
+            ->select('smartphones.*')
+            ->where('user_id', $id)
+            ->get();
+
+      $lap = DB::table('all_products')
+            ->join('laptops', 'all_products.type_id', '=', 'laptops.id')
+            ->join('cart', 'all_products.id', '=', 'cart.p_id')
+            ->select('laptops.*')
+            ->where('user_id', $id)
+            ->get();
+
+      $eph = DB::table('all_products')
+            ->join('earphones', 'all_products.type_id', '=', 'earphones.id')
+            ->join('cart', 'all_products.id', '=', 'cart.p_id')
+            ->select('earphones.*')
+            ->where('user_id', $id)
+            ->get();
+
 
     	return view('pages/cart', [
-    		'cart' => $cart
+    		'mob' => $mob,
+        'lap' => $lap,
+        'eph' => $eph
     	]);
 
     }
@@ -63,7 +87,7 @@ class CartController extends Controller
     		->where('p_id', $id)
     		->first();
 
-    	if($check == null) {	
+    	if($check == null) {
 	  		// do nothing
     	}
 
